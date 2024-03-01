@@ -1,0 +1,33 @@
+int main() {
+    int num,p1,count=1;
+    
+    num=rand()%100;
+    // printf("Number is %d\n",num);
+    
+    do {
+        label:
+        printf("Please guess number:\n");
+        scanf("%d",&p1);
+        if (p1>num)
+        {
+            printf("Lower number please!\n");
+            count++;
+            goto label;
+        }
+        
+        else if (p1<num) {
+            printf("Higher number please!\n");
+            count++;
+            goto label;
+        }
+        
+        else if (p1==num) {
+            printf("EXACT MATCH!\n");
+            printf("You have won the game in %d attempts\n",count);
+            exit (0);
+        }
+    }while(p1>-1);
+    
+
+    return 0;
+}
